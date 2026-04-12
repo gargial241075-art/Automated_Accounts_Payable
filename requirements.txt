@@ -1,0 +1,8 @@
+fastapi==0.115.6
+uvicorn==0.34.0
+pydantic==2.10.4
+openai==1.59.9
+requests==2.32.3
+websockets==14.1
+openenv-core>=0.2.0
+openenv>=0.2.0

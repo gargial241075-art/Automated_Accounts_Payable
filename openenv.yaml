@@ -1,0 +1,71 @@
+version: "1.0"
+name: ap_workflow_env
+description: >
+  Automated Accounts Payable (AP) Workflow Environment.
+  Agents process invoices: validate against POs, detect fraud/duplicates,
+  route approvals, and post to the General Ledger.
+app: server/app.py
+server_entry: server
+port: 7860
+
+tasks:
+  - id: single_invoice_validation
+    name: "Easy: Single Invoice Validation"
+    description: >
+      Validate one invoice against a matching Purchase Order
+      (vendor, amount within 5%, date) then post to the correct
+      General Ledger account. Reject only if the PO is missing
+      or vendor does not match.
+    difficulty: easy
+    max_steps: 20
+    grader: grader.grade_task
+    reward_threshold: 0.8
+
+  - id: fraud_duplicate_detection
+    name: "Medium: Fraud & Duplicate Detection"
+    description: >
+      Process a batch of 3 invoices containing 1 valid invoice,
+      1 fraudulent invoice (FAKE vendor name, round-number spike,
+      no matching PO), and 1 duplicate. Correctly classify each
+      using flag_fraud, mark_duplicate, or validate+post.
+    difficulty: medium
+    max_steps: 35
+    grader: grader.grade_task
+    reward_threshold: 0.6
+
+  - id: full_ap_cycle
+    name: "Hard: Full AP Cycle with Approvals"
+    description: >
+      Process 5 invoices in a complete AP cycle: validate each,
+      route high-value invoices (>$7500) to the correct manager
+      via route_approval, flag fraud and duplicates, then post
+      all approved invoices to the correct GL account.
+      Score = 0.4*validation_acc + 0.3*approval_acc + 0.3*ledger_acc.
+    difficulty: hard
+    max_steps: 50
+    grader: grader.grade_task
+    reward_threshold: 0.5
+
+observation_space:
+  type: object
+  fields:
+    task_id: "Current task identifier string"
+    task_prompt: "Natural language instructions for the agent"
+    step_number: "Current step count (int)"
+    current_invoice: "Next Invoice object to process, or null"
+    pending_invoices: "List of all unprocessed Invoice objects"
+    purchase_orders: "List of PurchaseOrder objects for matching"
+    ledger_entries: "List of LedgerEntry objects posted so far"
+    approvals_history: "List of ApprovalRecord objects"
+    last_action_result: "String feedback from the previous action"
+    available_actions: "List of valid tool_call strings"
+    invoices_processed: "Count of invoices no longer pending (int)"
+    total_invoices: "Total invoice count this episode (int)"
+    done: "True when episode is complete (bool)"
+
+action_space:
+  type: object
+  fields:
+    tool_call: "validate_data | flag_fraud | mark_duplicate | route_approval | post_ledger | reject | request_info"
+    parameters: "Tool-specific JSON parameters"
+    reasoning: "Optional agent reasoning string"

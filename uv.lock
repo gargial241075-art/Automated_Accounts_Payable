@@ -1,0 +1,82 @@
+version = 1
+revision = 1
+requires-python = ">=3.11"
+
+[[package]]
+name = "ap-workflow-env"
+version = "1.0.0"
+source = { editable = "." }
+dependencies = [
+  { name = "fastapi" },
+  { name = "openai" },
+  { name = "openenv-core" },
+  { name = "pydantic" },
+  { name = "requests" },
+  { name = "uvicorn" },
+  { name = "websockets" },
+]
+
+[package.metadata]
+requires-dist = [
+  { name = "fastapi", specifier = ">=0.115.0" },
+  { name = "openai", specifier = ">=1.0.0" },
+  { name = "openenv-core", specifier = ">=0.1.0" },
+  { name = "pydantic", specifier = ">=2.0.0" },
+  { name = "requests", specifier = ">=2.28.0" },
+  { name = "uvicorn", specifier = ">=0.34.0" },
+  { name = "websockets", specifier = ">=12.0" },
+]
+
+[[package]]
+name = "annotated-types"
+version = "0.7.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz", hash = "sha256:aff07c09a53a08bc8cfead79f0622d2f7beabb96f7b8e5c5f51bbc6da09d897a" }
+
+[[package]]
+name = "anyio"
+version = "4.7.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/f6/40/318e58f669b1a9e00f8c4d1b2e9f3b8c6b7a7b9b8b7b9b8b7b9b8b7b9b8/anyio-4.7.0.tar.gz", hash = "sha256:ee233cdb89a7b7d0a3bfb70ca93e1bf5a8e62a3a8dbf5c7f8e7a0b9f0b9f0b9" }
+
+[[package]]
+name = "fastapi"
+version = "0.115.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/fastapi-0.115.6.tar.gz", hash = "sha256:fastapi-placeholder" }
+
+[[package]]
+name = "openai"
+version = "1.59.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/openai-1.59.9.tar.gz", hash = "sha256:openai-placeholder" }
+
+[[package]]
+name = "openenv-core"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/openenv-core-0.1.0.tar.gz", hash = "sha256:openenv-core-placeholder" }
+
+[[package]]
+name = "pydantic"
+version = "2.10.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/pydantic-2.10.4.tar.gz", hash = "sha256:pydantic-placeholder" }
+
+[[package]]
+name = "requests"
+version = "2.32.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/requests-2.32.3.tar.gz", hash = "sha256:requests-placeholder" }
+
+[[package]]
+name = "uvicorn"
+version = "0.34.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/uvicorn-0.34.0.tar.gz", hash = "sha256:uvicorn-placeholder" }
+
+[[package]]
+name = "websockets"
+version = "14.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/websockets-14.1.tar.gz", hash = "sha256:websockets-placeholder" }
