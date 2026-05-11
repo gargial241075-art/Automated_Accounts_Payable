@@ -223,3 +223,10 @@ This project was developed for the **Meta x Scaler Hackathon**. It simplifies th
 
 ## 📸 Demo
 [https://huggingface.co/spaces/GargiG15/Automated_Accounts_Payable/tree/main]
+
+## 🏆 Evaluation & Validation
+This project was part of the **Meta x Scaler Hackathon**, where it successfully cleared the initial automated evaluation and technical validation phases (Phase 1 & Phase 2).
+
+![Phase 1 & 2 Success Log](Meta x Scaler_Hackathon_pass.png)
+
+*Note: The screenshot confirms the successful validation of the AI-driven logic during the hackathon's automated testing rounds.*
