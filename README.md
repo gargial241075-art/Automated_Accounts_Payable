@@ -201,4 +201,25 @@ Returns: `{"score": 0.92, "breakdown": {...}, "passed": true, "feedback": "..."}
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT — see [LICENSE](LICENSE) 
+
+# Automated Accounts Payable System
+An AI-powered solution designed to automate invoice processing and financial workflows.
+
+## 🚀 Overview
+This project was developed for the **Meta x Scaler Hackathon**. It simplifies the complex task of managing accounts payable by using Generative AI to extract data and automate validation.
+
+## 🛠️ Tech Stack & AI Integration
+- **Backend Logic & Architecture:** Developed using **Anthropic Claude**. Claude helped in structuring the complex financial logic and error handling.
+- **Data Extraction & Processing:** Powered by **Google Gemini**. It accurately reads and interprets invoice details.
+- **Research & Refinement:** Utilized **Perplexity AI** for real-time compliance checks.
+- **Deployment:** Fully hosted on **Hugging Face Spaces**.
+
+## ✨ Key Features
+- **Intelligent Backend:** A robust system architecture built with Claude for high reliability.
+- **Smart Data Extraction:** Uses Gemini to automate the manual entry of financial records.
+- **End-to-End Automation:** Connects unstructured invoice data to a structured payable workflow.
+- **Cloud Scale:** Deployed on Hugging Face for easy demonstration and scaling.
+
+## 📸 Demo
+[https://huggingface.co/spaces/GargiG15/Automated_Accounts_Payable/tree/main]
